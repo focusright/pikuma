@@ -67,7 +67,7 @@ void render(void) {
     SDL_RenderPresent(renderer);
 }
 
-int main(void) {
+int main(int argc, char* args[]) {
     is_running = initialize_window();
 
     setup();

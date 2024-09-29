@@ -1,12 +1,4 @@
-clang++.exe -std=c++17 main.cpp -o renderer.exe 
--L C:\libs\SDL2-2.28.5\lib\x64\ 
--L C:\libs\SDL2_ttf-2.20.2\lib\x64\ 
--I C:\libs\SDL2_ttf-2.20.2\include\ 
--I C:\libs\SDL2-2.28.5\include\ 
--lShell32 -lSDL2main -lSDL2 -lSDL2_ttf -Wno-narrowing -Xlinker /subsystem:console
-
-
-clang++.exe -std=c++17 ./src/main.c -o renderer.exe -L %SDL2_LIBRARY% -I %SDL2_INCLUDE_DIR% -lShell32 -lSDL2main -lSDL2 -Wno-narrowing -Xlinker /subsystem:console
+clang -std=c99 ./src/main.c -o renderer.exe -L %SDL2_LIBRARY% -I %SDL2_INCLUDE_DIR% -lShell32 -lSDL2main -lSDL2 -Wno-narrowing -Xlinker /subsystem:console
 
 %SDL2_LIBRARY%
 %SDL2_INCLUDE_DIR%
