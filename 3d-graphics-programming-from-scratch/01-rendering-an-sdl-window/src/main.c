@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include <SDL2/SDL.h>
+#include <SDL.h>
 
 bool is_running = false;
 SDL_Window* window = NULL; 
