@@ -2,3 +2,5 @@ clang -std=c99 ./src/main.c -o renderer.exe -L %SDL2_LIBRARY% -I %SDL2_INCLUDE_D
 
 %SDL2_LIBRARY%
 %SDL2_INCLUDE_DIR%
+
+clang -std=c99 ./src/main.c -o renderer `pkg-config --libs --cflags sdl2`
