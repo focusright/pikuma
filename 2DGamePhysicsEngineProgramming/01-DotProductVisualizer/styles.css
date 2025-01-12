@@ -1,0 +1,14 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    cursor: none;
+    text-align: center;
+}
+
+canvas {
+    margin: 0 auto;
+    display: block;
+    border-style: solid;
+    cursor: none;
+}
