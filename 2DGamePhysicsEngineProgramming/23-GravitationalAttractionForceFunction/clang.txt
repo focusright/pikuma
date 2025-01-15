@@ -1,0 +1,25 @@
+[Windows]
+    [Directory structure]
+        C:\libs\
+            includes\
+                SDL2\ (soft link)
+            libs\
+                SDL2_image-2.8.4\ (SDL2_image-devel-2.8.4-VC.zip)
+                SDL2-2.30.11\ (SDL2-devel-2.30.11-VC.zip)
+    [Make soft link]
+        at C:\libs\includes>
+        mklink /J SDL2 ..\libs\SDL2-2.30.11\include
+    [Set environment variables]
+        INCLUDES_DIR = C:\libs\includes
+        SDL2_INCLUDE_DIR = C:\libs\libs\SDL2-2.30.11\include
+        SDL2_LIBRARY = C:\libs\libs\SDL2-2.30.11\lib\x64
+    [Copy these files from .\SDL2_gfx to INCLUDES_DIR]
+        SDL2_gfxPrimitives.h
+        SDL2_gfxPrimitives_font.h
+        SDL2_imageFilter.h
+        SDL2_rotozoom.h
+    [Compile]
+        clang++ -Wall -std=c++17 .\src\*.cpp .\src\Physics\*.cpp .\SDL2_gfx\*.c -o gravity.exe ^
+        -L %SDL2_LIBRARY% ^
+        -I %SDL2_INCLUDE_DIR% ^
+        -I %INCLUDES_DIR% -lShell32 -lSDL2main -lSDL2 -Wno-narrowing -Xlinker /subsystem:console
