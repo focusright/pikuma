@@ -19,7 +19,7 @@
         SDL2_imageFilter.h
         SDL2_rotozoom.h
     [Compile]
-        clang++ -Wall -std=c++17 .\src\*.cpp .\src\Physics\*.cpp .\SDL2_gfx\*.c -o gravity.exe ^
+        clang++ -Wall -std=c++17 .\src\*.cpp .\src\Physics\*.cpp .\SDL2_gfx\*.c -o app.exe ^
         -L %SDL2_LIBRARY% ^
         -I %SDL2_INCLUDE_DIR% ^
         -I %INCLUDES_DIR% -lShell32 -lSDL2main -lSDL2 -Wno-narrowing -Xlinker /subsystem:console
