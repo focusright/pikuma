@@ -18,8 +18,22 @@
         SDL2_gfxPrimitives_font.h
         SDL2_imageFilter.h
         SDL2_rotozoom.h
-    [Compile]
-        clang++ -Wall -std=c++17 .\src\*.cpp .\src\Physics\*.cpp .\SDL2_gfx\*.c -o app.exe ^
+    [Create SDL2_gfx.lib]
+        clang++ -c -o SDL2_gfxPrimitives.o SDL2_gfxPrimitives.c -I %SDL2_INCLUDE_DIR% -lSDL2 
+        clang++ -c -o SDL2_imageFilter.o SDL2_imageFilter.c -I %SDL2_INCLUDE_DIR% -lSDL2 
+        clang++ -c -o SDL2_rotozoom.o SDL2_rotozoom.c -I %SDL2_INCLUDE_DIR% -lSDL2 
+        llvm-ar rc SDL2_gfx.lib SDL2_gfxPrimitives.o SDL2_imageFilter.o SDL2_rotozoom.o
+    [Move SDL2_gfx.lib from SDL2_gfx\ to %SDL2_LIBRARY%]
+        cd SDL2_gfx
+        move SDL2_gfx.lib %SDL2_LIBRARY%
+    [Copy SDL2.dll to project directory]
+        cd 23-GravitationalAttractionForceFunction\2dphysics
+        copy %SDL2_LIBRARY%\SDL2.dll
+    [Compile Project]
+        clang++ -v -Wall -std=c++17 .\src\*.cpp .\src\Physics\*.cpp -o app.exe ^
         -L %SDL2_LIBRARY% ^
         -I %SDL2_INCLUDE_DIR% ^
-        -I %INCLUDES_DIR% -lShell32 -lSDL2main -lSDL2 -Wno-narrowing -Xlinker /subsystem:console
+        -I %INCLUDES_DIR% -lShell32 -lSDL2main -lSDL2 -lSDL2_gfx -Wno-narrowing -Xlinker /subsystem:console
+    [references]
+        https://stackoverflow.com/questions/71011962/create-static-and-shared-libraries-with-clang
+        https://mottosso.gitbooks.io/clang/content/building_a_static_library.html
