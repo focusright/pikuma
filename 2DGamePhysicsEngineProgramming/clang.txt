@@ -13,7 +13,7 @@
         INCLUDES_DIR = C:\libs\includes
         SDL2_INCLUDE_DIR = C:\libs\libs\SDL2-2.30.11\include
         SDL2_LIBRARY = C:\libs\libs\SDL2-2.30.11\lib\x64
-    [Copy these files from .\SDL2_gfx to INCLUDES_DIR]
+    [Copy these files from .\SDL2_gfx to SDL2_INCLUDE_DIR]
         SDL2_gfxPrimitives.h
         SDL2_gfxPrimitives_font.h
         SDL2_imageFilter.h
