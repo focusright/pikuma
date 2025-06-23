@@ -1,0 +1,14 @@
+{
+  "version": "19265.20240809.4.x64",
+  "changeset": "72e4edcc6e12c12badea8039c3a8f43ee3738987",
+  "timestamp": 1723172574,
+  "channel": "dev",
+  "updateInfo": [
+    {
+      "channel": "dev",
+      "method": "appcenter",
+      "updateCatalog": "https://install.appcenter.ms/api/v0.1/apps/grumpycoders/pcsx-redux-win64/distribution_groups/public/public_releases",
+      "updateInfoBase": "https://install.appcenter.ms/api/v0.1/apps/grumpycoders/pcsx-redux-win64/distribution_groups/public/releases/"
+    }
+  ]
+}
